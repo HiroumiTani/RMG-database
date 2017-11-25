@@ -2913,3 +2913,17 @@ K. Siddique, M. Altarawneh, J. Gore, P.R. Westmoreland, B.Z. Dlugogorski, J. Che
 doi: 10.1021/acs.jpca.6b12890
 """,
 )
+
+entry(
+    index = 1078,
+    label = "MPO1O-1OJ + O2 <=> MPO1O-1O-birad + HO2",
+    degeneracy = 4,
+    kinetics = Arrhenius(A=(2.45e-1, 'cm^3/(mol*s)'), n=3.573, Ea=(5.967, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
+    

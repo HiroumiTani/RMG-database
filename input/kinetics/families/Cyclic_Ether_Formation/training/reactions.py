@@ -34,4 +34,30 @@ using Gaussian 03 and MOLPRO. High-pressure-limit rate coefficient computed
 using Variflex.
 """,
 )
+    
+entry(
+    index = 2,
+    label = "MPO1Q2J-1Q-1 <=> MPO-1Q12OCYC + OH",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(7.75e11, 's^-1'), n=0.025, Ea=(10.813, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
+
+entry(
+    index = 3,
+    label = "MPO1Q2J-1Q-2 <=> MPO1Q2-1OCYC + OH",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(2.52e8, 's^-1'), n=0.376, Ea=(13.863, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
 
