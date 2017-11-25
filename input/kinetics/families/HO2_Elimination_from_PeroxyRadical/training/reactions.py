@@ -35,4 +35,20 @@ using Variflex.
 DOI: 10.1039/C1CP22765C
 """,
 )
-
+entry(
+    index = 2,
+    label = "MPO1QJ <=> MPO1Star + HO2",
+    degeneracy = 2,
+    kinetics = Arrhenius(
+        A = (1.03e10, 's^-1'),
+        n = 1.109,
+        Ea = (30.611, 'kcal/mol'),
+        T0 = (1, 'K'),
+    ),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 calculation with 1-D HR by Lintao Bu at Nrel
+""",
+)
