@@ -496,3 +496,41 @@ Taken from entry: C5H4CH3 <=> C5H5CH2-1
 """,
 )
 
+entry(
+    index = 34,
+    label = "MPO1QJ-1 <=> MPO1QJ-1J",
+    degeneracy = 3,
+    kinetics = Arrhenius(A=(2.97e7, 's^-1'), n=1.34, Ea=(13.961, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
+
+entry(
+    index = 35,
+    label = "MPO1QJ-2 <=> MPO1QJ-2J",
+    degeneracy = 2,
+    kinetics = Arrhenius(A=(1.51e2, 's^-1'), n=2.993, Ea=(22.041, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
+
+entry(
+    index = 36,
+    label = "MPO1QJ-3 <=> MPO1QJ-3J",
+    degeneracy = 3,
+    kinetics = Arrhenius(A=(1.87e5, 's^-1'), n=2.003, Ea=(17.53, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
