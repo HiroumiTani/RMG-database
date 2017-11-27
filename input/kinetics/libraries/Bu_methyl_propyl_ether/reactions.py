@@ -31,4 +31,20 @@ entry(
     shortDesc = u"""G4 calculation with 1-D HR by Lintao Bu at Nrel""",
 )
 
+entry(
+    index = 4,
+    label = "MPO1Q3J <=> CH3OCHO + C2H4 + OH",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(1.555e3, 's^-1'), n=1.809, Ea=(26.459, 'kcal/mol'), T0=(1, 'K')),
+    shortDesc = u"""G4 calculation with 1-D HR by Lintao Bu at Nrel""",
+)
+
+entry(
+    index = 5,
+    label = "MPO1O3Q + HCOOH <=> HCOOH + MPO_CP13",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(1.555e3, 's^-1'), n=1.809, Ea=(26.459, 'kcal/mol'), T0=(1, 'K')),
+    shortDesc = u"""G4 calculation with 1-D HR by Lintao Bu at Nrel""",
+)
+
 
