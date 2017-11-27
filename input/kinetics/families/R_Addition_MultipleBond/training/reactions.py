@@ -1268,6 +1268,19 @@ u"""
 Originally from reaction library: From 2012 Kislov
 """,
 )
+    
+entry(
+    index = 186,
+    label = "MPO1Q2J <=> MPO1Star + HO2",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(4.891e12, 's^-1'), n=-0.291, Ea=(21.232, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
 
 entry(
     index = 77,
@@ -1288,6 +1301,19 @@ CBS-QB3
 )
 
 entry(
+    index=187,
+    label = "MPO1Q2J3Q <=> MPO1Q2Star + HO2",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(8.255e15, 's^-1'), n=-0.549, Ea=(16.043, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
+
+entry(
     index = 78,
     label = "C12H18 + H <=> C12H19-1",
     degeneracy = 1.0,
@@ -1304,6 +1330,19 @@ u"""
 Training reaction, kinetics calculated by Lawrence Lai under the CBS-QB3 level of theory, 2017
 Hexylbenzene + H --> CCCCCCC1C=C[CH]C=C1
 More information can be found on pharos/home/laitcl/Gaussian/HAdditiontoRing
+""",
+)
+
+entry(
+    index=188,
+    label = "MPO1O3OJ <=> CH2COOCH3 + CH2O",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(5.475e11, 's^-1'), n=0.562, Ea=(14.030, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
 """,
 )
 
@@ -2986,3 +3025,17 @@ The paper reports a HO-RR rate, and a sum-over-states rate (where vib-rot aren't
 The sum-over-states rate was taken here.
 """,
 )
+
+entry(
+    index=189,
+    label = "MPO1O3OJ-2 <=> MPO1O3O + H",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(5.010e9, 's^-1'), n=1.352, Ea=(16.741, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
+
