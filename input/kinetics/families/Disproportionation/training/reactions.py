@@ -58,3 +58,18 @@ Hydrocarbon Formation in a Laminar Premixed n-butane Flame
 Derived from fitting to a complex mechanism for C2H3 + O2 = C2H2 + HO2
 """,
 )
+
+entry(
+    index = 3,
+    label = "MPO1O3OJ + O2 <=> MPO1O3O + HO2",
+    degeneracy = 8,
+    kinetics = Arrhenius(A=(1.109e-1, 'cm^3/(mol*s)'), n=3.469, Ea=(6.630, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+)
+
+
