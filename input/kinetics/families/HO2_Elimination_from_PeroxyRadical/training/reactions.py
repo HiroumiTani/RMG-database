@@ -52,3 +52,21 @@ u"""
 G4 calculation with 1-D HR by Lintao Bu at Nrel
 """,
 )
+    
+entry(
+    index = 3,
+    label = "MPO1Q3QJ <=> MPO1Q2Star + HO2",
+    degeneracy = 2,
+    kinetics = Arrhenius(
+        A = (1.403e13, 's^-1'),
+        n = -0.226,
+        Ea = (26.937, 'kcal/mol'),
+        T0 = (1, 'K'),
+    ),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 calculation with 1-D HR by Lintao Bu at Nrel
+""",
+)
