@@ -7,3 +7,20 @@ longDesc = u"""
 Put kinetic parameters for reactions to use as a training set for fitting
 group additivity values in this file.
 """
+entry(
+    index = 1,
+    label = "MPO1O3Q <=> MPO_CP13",
+    degeneracy = 4,
+    kinetics = Arrhenius(
+        A = (9.484e7, 's^-1'),
+        n = 0.489,
+        Ea = (30.624, 'kcal/mol'),
+        T0 = (1, 'K'),
+    ),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 calculation with 1-D HR by Lintao Bu at Nrel
+""",
+)
