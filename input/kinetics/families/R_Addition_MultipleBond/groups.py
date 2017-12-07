@@ -14734,6 +14734,7 @@ entry(
 1 *3 H u1
 """,
     kinetics = None,
+    nodalDistance=10,
 )
 
 entry(
