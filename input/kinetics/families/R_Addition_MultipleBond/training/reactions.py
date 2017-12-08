@@ -1368,6 +1368,7 @@ More information can be found on pharos/home/laitcl/Gaussian/HAdditiontoRing
 
 entry(
     index = 80,
+<<<<<<< HEAD
     label = "C7H8-13 + H <=> C7H9-24",
     degeneracy = 2.0,
     kinetics = Arrhenius(
@@ -3041,7 +3042,7 @@ G4 Calculation with 1-D HR done by Lintao Bu at Nrel
 
 entry(
     index = 190,
-    label = "CH3OCH2 <=> CH3 + CH2O",
+    label = "CH3OCH2 <=> CH3 + CH2O-2",
     degeneracy = 1,
     kinetics = Arrhenius(A=(8.03e12, 's^-1'), n=0.44, Ea=(26.472, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
