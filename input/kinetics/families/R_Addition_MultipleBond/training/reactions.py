@@ -3039,3 +3039,16 @@ G4 Calculation with 1-D HR done by Lintao Bu at Nrel
 """,
 )
 
+entry(
+    index = 190,
+    label = "CH3OCH2 <=> CH3 + CH2O",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(8.03e12, 's^-1'), n=0.44, Ea=(26.472, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""CBS-QB3 calculation""",
+    longDesc = 
+u"""
+CBS-QB3 calculation from Burke et al. 2014 dimethyl ether model
+""",
+)
+
