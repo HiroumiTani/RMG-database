@@ -24,6 +24,7 @@ recommendedFamilies = {
 'Cyclic_Ether_Formation':True,
 'Diels_alder_addition':True,
 'Disproportionation':True,
+'PriSec_Peroxyl_Disproportionation':False,
 'Tert_Peroxyl_Disproportionation':False,
 'HO2_Elimination_from_PeroxyRadical':True,
 'H_Abstraction':True,
