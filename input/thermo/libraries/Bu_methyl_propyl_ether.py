@@ -1,14 +1,43 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-name = "Bu_methyl_propyl_ether.py"
-shortDesc = u"G4 with 1-D HR"
+name = "Bu_methyl_propyl_ether"
+shortDesc = u"Thermo calculated using G4 method with 1-d HR using cantherm by Mark Nimlos and Bu Lintao of Nrel"
 longDesc = u"""
-G4 calculations run using Cantherm 1-D HR done by Lintao Bu at Nrel
-made for combustion of methyl-propyl-ether
+Thermo calculated using G4 method with 1-d HR using cantherm by Mark Nimlos and Bu Lintao of Nrel
+for oxidation of propyl-methyl-ether
 """
 entry(
     index = 0,
+    label = "CH3OCHO",
+    molecule = 
+"""
+1 C u0 p0 c0 {2,S} {5,S} {6,S} {7,S}
+2 O u0 p2 c0 {1,S} {3,S}
+3 C u0 p0 c0 {2,S} {4,D} {8,S}
+4 O u0 p2 c0 {3,D}
+5 H u0 p0 c0 {1,S}
+6 H u0 p0 c0 {1,S}
+7 H u0 p0 c0 {1,S}
+8 H u0 p0 c0 {3,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.96529,0.00198331,6.4164e-05,-1.06369e-07,5.67671e-11,-16129.3,9.57726], Tmin=(10,'K'), Tmax=(484.13,'K')),
+            NASAPolynomial(coeffs=[0.820986,0.0279625,-1.63287e-05,4.47319e-09,-4.71181e-13,-16129.3,22.4658], Tmin=(484.13,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+    ),
+    shortDesc = u"""""",
+    longDesc = 
+u"""
+
+""",
+)
+
+entry(
+    index = 1,
     label = "CH2COOCH3",
     molecule = 
 """
@@ -26,8 +55,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.83567,0.0145233,7.81521e-05,-2.13934e-07,1.82674e-10,-28548.1,10.7744], Tmin=(10,'K'), Tmax=(300.05,'K')),
-            NASAPolynomial(coeffs=[2.34933,0.0343378,-2.09033e-05,6.15085e-09,-6.99343e-13,-28548.1,16.1558], Tmin=(300.05,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.83567,0.0145233,7.81521e-05,-2.13934e-07,1.82674e-10,-18731.2,10.7744], Tmin=(10,'K'), Tmax=(300.05,'K')),
+            NASAPolynomial(coeffs=[2.34933,0.0343378,-2.09033e-05,6.15085e-09,-6.99343e-13,-18731.2,16.1558], Tmin=(300.05,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -40,25 +69,25 @@ u"""
 )
 
 entry(
-    index = 1,
+    index = 2,
     label = "MPO",
     molecule = 
 """
-1  C u0 p0 c0 {2,S} {3,S} {6,S} {7,S}
-2  C u0 p0 c0 {1,S} {5,S} {8,S} {9,S}
-3  C u0 p0 c0 {1,S} {10,S} {11,S} {12,S}
-4  C u0 p0 c0 {5,S} {13,S} {14,S} {15,S}
-5  O u0 p2 c0 {2,S} {4,S}
+1  C u0 p0 c0 {2,S} {6,S} {7,S} {8,S}
+2  O u0 p2 c0 {1,S} {3,S}
+3  C u0 p0 c0 {2,S} {4,S} {9,S} {10,S}
+4  C u0 p0 c0 {3,S} {5,S} {11,S} {12,S}
+5  C u0 p0 c0 {4,S} {13,S} {14,S} {15,S}
 6  H u0 p0 c0 {1,S}
 7  H u0 p0 c0 {1,S}
-8  H u0 p0 c0 {2,S}
-9  H u0 p0 c0 {2,S}
+8  H u0 p0 c0 {1,S}
+9  H u0 p0 c0 {3,S}
 10 H u0 p0 c0 {3,S}
-11 H u0 p0 c0 {3,S}
-12 H u0 p0 c0 {3,S}
-13 H u0 p0 c0 {4,S}
-14 H u0 p0 c0 {4,S}
-15 H u0 p0 c0 {4,S}
+11 H u0 p0 c0 {4,S}
+12 H u0 p0 c0 {4,S}
+13 H u0 p0 c0 {5,S}
+14 H u0 p0 c0 {5,S}
+15 H u0 p0 c0 {5,S}
 """,
     thermo = NASA(
         polynomials = [
@@ -76,25 +105,25 @@ u"""
 )
 
 entry(
-    index = 2,
+    index = 3,
     label = "MPO1J",
     molecule = 
 """
 multiplicity 2
-1  C u0 p0 c0 {2,S} {4,S} {6,S} {7,S}
-2  C u0 p0 c0 {1,S} {8,S} {9,S} {10,S}
-3  C u0 p0 c0 {5,S} {11,S} {12,S} {13,S}
-4  C u1 p0 c0 {1,S} {5,S} {14,S}
-5  O u0 p2 c0 {3,S} {4,S}
-6  H u0 p0 c0 {1,S}
+1  C u0 p0 c0 {2,S} {7,S} {8,S} {9,S}
+2  O u0 p2 c0 {1,S} {3,S}
+3  C u1 p0 c0 {2,S} {4,S} {5,S}
+4  H u0 p0 c0 {3,S}
+5  C u0 p0 c0 {3,S} {6,S} {10,S} {11,S}
+6  C u0 p0 c0 {5,S} {12,S} {13,S} {14,S}
 7  H u0 p0 c0 {1,S}
-8  H u0 p0 c0 {2,S}
-9  H u0 p0 c0 {2,S}
-10 H u0 p0 c0 {2,S}
-11 H u0 p0 c0 {3,S}
-12 H u0 p0 c0 {3,S}
-13 H u0 p0 c0 {3,S}
-14 H u0 p0 c0 {4,S}
+8  H u0 p0 c0 {1,S}
+9  H u0 p0 c0 {1,S}
+10 H u0 p0 c0 {5,S}
+11 H u0 p0 c0 {5,S}
+12 H u0 p0 c0 {6,S}
+13 H u0 p0 c0 {6,S}
+14 H u0 p0 c0 {6,S}
 """,
     thermo = NASA(
         polynomials = [
@@ -112,7 +141,7 @@ u"""
 )
 
 entry(
-    index = 3,
+    index = 4,
     label = "MPO1QJ",
     molecule = 
 """
@@ -136,8 +165,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.28174,0.0733203,-0.000166491,3.45406e-07,-2.85955e-10,-29738.9,10.6064], Tmin=(10,'K'), Tmax=(392.77,'K')),
-            NASAPolynomial(coeffs=[3.22771,0.0564821,-3.57802e-05,1.0832e-08,-1.25715e-12,-29738.9,12.5239], Tmin=(392.77,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.28174,0.0733203,-0.000166491,3.45406e-07,-2.85955e-10,-19922,10.6064], Tmin=(10,'K'), Tmax=(392.77,'K')),
+            NASAPolynomial(coeffs=[3.22771,0.0564821,-3.57802e-05,1.0832e-08,-1.25715e-12,-19922,12.5239], Tmin=(392.77,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -150,7 +179,7 @@ u"""
 )
 
 entry(
-    index = 4,
+    index = 5,
     label = "MPO1Q-1J",
     molecule = 
 """
@@ -174,8 +203,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.68192,0.0236413,0.000212762,-7.00981e-07,6.36089e-10,-24442.7,12.884], Tmin=(10,'K'), Tmax=(406.24,'K')),
-            NASAPolynomial(coeffs=[8.35995,0.0317811,-1.74296e-05,5.21983e-09,-6.32132e-13,-24442.7,-10.9754], Tmin=(406.24,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[2.33891,0.11432,-0.000210611,1.88e-07,-6.24217e-11,-14625.8,15.2382], Tmin=(10,'K'), Tmax=(895.04,'K')),
+            NASAPolynomial(coeffs=[15.0473,0.02726,-1.39855e-05,3.76396e-09,-4.08695e-13,-14625.8,-37.8911], Tmin=(895.04,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -188,7 +217,7 @@ u"""
 )
 
 entry(
-    index = 5,
+    index = 6,
     label = "MPO1Q2J",
     molecule = 
 """
@@ -212,8 +241,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[2.6879,0.132662,-0.00047552,9.36747e-07,-6.79849e-10,-22777.5,11.311], Tmin=(10,'K'), Tmax=(426.1,'K')),
-            NASAPolynomial(coeffs=[7.39266,0.047012,-2.79654e-05,8.02296e-09,-8.91373e-13,-22777.5,-2.95402], Tmin=(426.1,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[2.6879,0.132662,-0.00047552,9.36747e-07,-6.79849e-10,-12960.6,11.311], Tmin=(10,'K'), Tmax=(426.1,'K')),
+            NASAPolynomial(coeffs=[7.39266,0.047012,-2.79654e-05,8.02296e-09,-8.91373e-13,-12960.6,-2.95402], Tmin=(426.1,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -226,7 +255,7 @@ u"""
 )
 
 entry(
-    index = 6,
+    index = 7,
     label = "MPO1Q3J",
     molecule = 
 """
@@ -250,42 +279,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[2.25565,0.154331,-0.000474281,7.03353e-07,-3.81704e-10,-21122.8,12.9621], Tmin=(10,'K'), Tmax=(555.25,'K')),
-            NASAPolynomial(coeffs=[13.3669,0.0290044,-1.3386e-05,3.1023e-09,-2.88712e-13,-21122.8,-27.8206], Tmin=(555.25,'K'), Tmax=(3000,'K')),
-        ],
-        Tmin = (10,'K'),
-        Tmax = (3000,'K'),
-    ),
-    shortDesc = u"""""",
-    longDesc = 
-u"""
-
-""",
-)
-
-entry(
-    index = 7,
-    label = "MPO1Star",
-    molecule = 
-"""
-1  C u0 p0 c0 {3,S} {6,S} {7,S} {8,S}
-2  C u0 p0 c0 {5,S} {9,S} {10,S} {11,S}
-3  C u0 p0 c0 {1,S} {4,D} {12,S}
-4  C u0 p0 c0 {3,D} {5,S} {13,S}
-5  O u0 p2 c0 {2,S} {4,S}
-6  H u0 p0 c0 {1,S}
-7  H u0 p0 c0 {1,S}
-8  H u0 p0 c0 {1,S}
-9  H u0 p0 c0 {2,S}
-10 H u0 p0 c0 {2,S}
-11 H u0 p0 c0 {2,S}
-12 H u0 p0 c0 {3,S}
-13 H u0 p0 c0 {4,S}
-""",
-    thermo = NASA(
-        polynomials = [
-            NASAPolynomial(coeffs=[3.52225,0.0408649,-5.05522e-05,7.26698e-08,-4.48502e-11,-17021.3,9.2477], Tmin=(10,'K'), Tmax=(571.71,'K')),
-            NASAPolynomial(coeffs=[1.7414,0.041958,-2.35976e-05,6.46222e-09,-6.91769e-13,-17021.3,18.4682], Tmin=(571.71,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[2.25565,0.154331,-0.000474281,7.03353e-07,-3.81704e-10,-11305.9,12.9621], Tmin=(10,'K'), Tmax=(555.25,'K')),
+            NASAPolynomial(coeffs=[13.3669,0.0290044,-1.3386e-05,3.1023e-09,-2.88712e-13,-11305.9,-27.8206], Tmin=(555.25,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -299,6 +294,40 @@ u"""
 
 entry(
     index = 8,
+    label = "MPO1Star",
+    molecule = 
+"""
+1  C u0 p0 c0 {2,S} {6,S} {7,S} {8,S}
+2  O u0 p2 c0 {1,S} {3,S}
+3  C u0 p0 c0 {2,S} {4,D} {9,S}
+4  C u0 p0 c0 {3,D} {5,S} {10,S}
+5  C u0 p0 c0 {4,S} {11,S} {12,S} {13,S}
+6  H u0 p0 c0 {1,S}
+7  H u0 p0 c0 {1,S}
+8  H u0 p0 c0 {1,S}
+9  H u0 p0 c0 {3,S}
+10 H u0 p0 c0 {4,S}
+11 H u0 p0 c0 {5,S}
+12 H u0 p0 c0 {5,S}
+13 H u0 p0 c0 {5,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.52225,0.0408649,-5.05522e-05,7.26698e-08,-4.48502e-11,-7204.43,9.2477], Tmin=(10,'K'), Tmax=(571.71,'K')),
+            NASAPolynomial(coeffs=[1.7414,0.041958,-2.35976e-05,6.46222e-09,-6.91769e-13,-7204.43,18.4682], Tmin=(571.71,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+    ),
+    shortDesc = u"""""",
+    longDesc = 
+u"""
+
+""",
+)
+
+entry(
+    index = 9,
     label = "MPO1-1OCYC",
     molecule = 
 """
@@ -319,8 +348,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[4.03062,-0.00252733,0.000128158,-1.86361e-07,8.71637e-11,-36672.3,11.2617], Tmin=(10,'K'), Tmax=(609.03,'K')),
-            NASAPolynomial(coeffs=[-3.82255,0.0560851,-3.35254e-05,9.58787e-09,-1.05608e-12,-36672.3,44.1835], Tmin=(609.03,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[4.03062,-0.00252733,0.000128158,-1.86361e-07,8.71637e-11,-26855.4,11.2617], Tmin=(10,'K'), Tmax=(609.03,'K')),
+            NASAPolynomial(coeffs=[-3.82255,0.0560851,-3.35254e-05,9.58787e-09,-1.05608e-12,-26855.4,44.1835], Tmin=(609.03,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -333,7 +362,7 @@ u"""
 )
 
 entry(
-    index = 9,
+    index = 10,
     label = "MPO12OCYC",
     molecule = 
 """
@@ -354,8 +383,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.80964,0.0287426,1.87539e-05,-3.39089e-08,1.19918e-11,-34682.8,10.718], Tmin=(10,'K'), Tmax=(1075.78,'K')),
-            NASAPolynomial(coeffs=[5.57892,0.039324,-1.9927e-05,4.8895e-09,-4.70381e-13,-34682.8,-2.56211], Tmin=(1075.78,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.80964,0.0287426,1.87539e-05,-3.39089e-08,1.19918e-11,-24865.9,10.718], Tmin=(10,'K'), Tmax=(1075.78,'K')),
+            NASAPolynomial(coeffs=[5.57892,0.039324,-1.9927e-05,4.8895e-09,-4.70381e-13,-24865.9,-2.56211], Tmin=(1075.78,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -368,7 +397,7 @@ u"""
 )
 
 entry(
-    index = 10,
+    index = 11,
     label = "MPO1Q-1QJ",
     molecule = 
 """
@@ -394,8 +423,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[2.91574,0.115846,-0.00035112,8.23593e-07,-7.62759e-10,-42913,13.4872], Tmin=(10,'K'), Tmax=(332.65,'K')),
-            NASAPolynomial(coeffs=[4.67696,0.0719594,-5.08301e-05,1.65677e-08,-2.02492e-12,-42913,8.8173], Tmin=(332.65,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[2.91574,0.115846,-0.00035112,8.23593e-07,-7.62759e-10,-33096.1,13.4872], Tmin=(10,'K'), Tmax=(332.65,'K')),
+            NASAPolynomial(coeffs=[4.67696,0.0719594,-5.08301e-05,1.65677e-08,-2.02492e-12,-33096.1,8.8173], Tmin=(332.65,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -408,7 +437,7 @@ u"""
 )
 
 entry(
-    index = 11,
+    index = 12,
     label = "MPO1Q3QJ",
     molecule = 
 """
@@ -434,8 +463,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.1772,0.0718492,0.000156206,-7.74098e-07,8.15342e-10,-40350.6,11.9998], Tmin=(10,'K'), Tmax=(373.44,'K')),
-            NASAPolynomial(coeffs=[9.79049,0.0612786,-4.34018e-05,1.43735e-08,-1.78772e-12,-40350.6,-19.0179], Tmin=(373.44,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.1772,0.0718492,0.000156206,-7.74098e-07,8.15342e-10,-30533.7,11.9998], Tmin=(10,'K'), Tmax=(373.44,'K')),
+            NASAPolynomial(coeffs=[9.79049,0.0612786,-4.34018e-05,1.43735e-08,-1.78772e-12,-30533.7,-19.0179], Tmin=(373.44,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -448,7 +477,7 @@ u"""
 )
 
 entry(
-    index = 12,
+    index = 13,
     label = "MPO1O-1Q",
     molecule = 
 """
@@ -471,8 +500,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.00324,0.107259,-0.000391806,9.61462e-07,-8.71064e-10,-67871.5,10.7997], Tmin=(10,'K'), Tmax=(357.59,'K')),
-            NASAPolynomial(coeffs=[3.71846,0.0615013,-4.14788e-05,1.30453e-08,-1.5518e-12,-67871.5,11.4601], Tmin=(357.59,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.00324,0.107259,-0.000391806,9.61462e-07,-8.71064e-10,-58054.6,10.7997], Tmin=(10,'K'), Tmax=(357.59,'K')),
+            NASAPolynomial(coeffs=[3.71846,0.0615013,-4.14788e-05,1.30453e-08,-1.5518e-12,-58054.6,11.4601], Tmin=(357.59,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -485,7 +514,7 @@ u"""
 )
 
 entry(
-    index = 13,
+    index = 14,
     label = "MPO1Q2J-1Q",
     molecule = 
 """
@@ -511,8 +540,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[2.58812,0.152812,-0.000642455,1.56209e-06,-1.38062e-09,-35730.9,16.3207], Tmin=(10,'K'), Tmax=(361.86,'K')),
-            NASAPolynomial(coeffs=[4.99773,0.0674965,-4.55631e-05,1.42991e-08,-1.69557e-12,-35730.9,12.4535], Tmin=(361.86,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.2518,0.0882431,-8.34614e-05,4.09341e-08,-8.32015e-12,-27366.6,11.5911], Tmin=(10,'K'), Tmax=(1077.52,'K')),
+            NASAPolynomial(coeffs=[12.9683,0.0521733,-3.32493e-05,9.86768e-09,-1.11229e-12,-27366.6,-36.0107], Tmin=(1077.52,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -525,7 +554,7 @@ u"""
 )
 
 entry(
-    index = 14,
+    index = 15,
     label = "MPO-1Q12OCYC",
     molecule = 
 """
@@ -548,8 +577,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.29344,0.0636104,-4.95383e-05,2.01739e-08,-3.40235e-12,-46650.2,11.3248], Tmin=(10,'K'), Tmax=(1284.65,'K')),
-            NASAPolynomial(coeffs=[10.9709,0.0397052,-2.16259e-05,5.68881e-09,-5.83484e-13,-46650.2,-27.6376], Tmin=(1284.65,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.15812,0.071764,-6.94456e-05,3.768e-08,-8.73901e-12,-38639.4,9.79082], Tmin=(10,'K'), Tmax=(955.31,'K')),
+            NASAPolynomial(coeffs=[9.76502,0.0441,-2.60084e-05,7.36718e-09,-8.06265e-13,-38639.4,-21.7816], Tmin=(955.31,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -562,7 +591,7 @@ u"""
 )
 
 entry(
-    index = 15,
+    index = 16,
     label = "Ozoind1-1",
     molecule = 
 """
@@ -585,8 +614,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.62664,0.0363321,4.34031e-05,-9.27261e-08,4.4423e-11,-30693.9,11.5305], Tmin=(10,'K'), Tmax=(751.2,'K')),
-            NASAPolynomial(coeffs=[3.79818,0.0549094,-3.26118e-05,9.27468e-09,-1.01799e-12,-30693.9,7.09164], Tmin=(751.2,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.62664,0.0363321,4.34027e-05,-9.27254e-08,4.44225e-11,-20877,11.5305], Tmin=(10,'K'), Tmax=(751.2,'K')),
+            NASAPolynomial(coeffs=[3.79827,0.0549092,-3.26116e-05,9.2746e-09,-1.01798e-12,-20877,7.0912], Tmin=(751.2,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -599,7 +628,7 @@ u"""
 )
 
 entry(
-    index = 16,
+    index = 17,
     label = "MPO1O3Q",
     molecule = 
 """
@@ -622,8 +651,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[2.9302,0.116298,-0.00047705,1.19137e-06,-1.06866e-09,-64483,12.7278], Tmin=(10,'K'), Tmax=(365.98,'K')),
-            NASAPolynomial(coeffs=[3.28338,0.0610902,-4.03217e-05,1.24473e-08,-1.4584e-12,-64483,16.0769], Tmin=(365.98,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.06499,0.097313,-0.000244877,4.91591e-07,-4.10416e-10,-55533.6,9.9789], Tmin=(10,'K'), Tmax=(346.25,'K')),
+            NASAPolynomial(coeffs=[5.27711,0.0611784,-4.2506e-05,1.37077e-08,-1.66409e-12,-55533.6,2.56869], Tmin=(346.25,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -636,7 +665,7 @@ u"""
 )
 
 entry(
-    index = 17,
+    index = 18,
     label = "MPO1Q2J3Q",
     molecule = 
 """
@@ -662,44 +691,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.11166,0.0930877,-0.00011556,9.12963e-08,-3.28478e-11,-32413.5,13.2566], Tmin=(10,'K'), Tmax=(620.49,'K')),
-            NASAPolynomial(coeffs=[7.73174,0.0633042,-4.35597e-05,1.39376e-08,-1.67933e-12,-32413.5,-6.82769], Tmin=(620.49,'K'), Tmax=(3000,'K')),
-        ],
-        Tmin = (10,'K'),
-        Tmax = (3000,'K'),
-    ),
-    shortDesc = u"""""",
-    longDesc = 
-u"""
-
-""",
-)
-
-entry(
-    index = 18,
-    label = "MPO1Q2Star",
-    molecule = 
-"""
-1  C u0 p0 c0 {3,S} {5,S} {6,S} {8,S}
-2  C u0 p0 c0 {5,S} {9,S} {10,S} {11,S}
-3  C u0 p0 c0 {1,S} {4,D} {12,S}
-4  C u0 p0 c0 {3,D} {13,S} {14,S}
-5  O u0 p2 c0 {1,S} {2,S}
-6  O u0 p2 c0 {1,S} {7,S}
-7  O u0 p2 c0 {6,S} {15,S}
-8  H u0 p0 c0 {1,S}
-9  H u0 p0 c0 {2,S}
-10 H u0 p0 c0 {2,S}
-11 H u0 p0 c0 {2,S}
-12 H u0 p0 c0 {3,S}
-13 H u0 p0 c0 {4,S}
-14 H u0 p0 c0 {4,S}
-15 H u0 p0 c0 {7,S}
-""",
-    thermo = NASA(
-        polynomials = [
-            NASAPolynomial(coeffs=[3.68793,0.0304826,0.000322109,-1.54801e-06,2.15377e-09,-27637.5,11.0013], Tmin=(10,'K'), Tmax=(253.43,'K')),
-            NASAPolynomial(coeffs=[5.00069,0.050019,-3.17871e-05,9.70755e-09,-1.14067e-12,-27637.5,3.91943], Tmin=(253.43,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[2.6381,0.144124,-0.000516694,1.15846e-06,-9.86819e-10,-23705,11.4262], Tmin=(10,'K'), Tmax=(357.6,'K')),
+            NASAPolynomial(coeffs=[6.62556,0.0656252,-4.52409e-05,1.44781e-08,-1.74506e-12,-23705,-0.680208], Tmin=(357.6,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -713,6 +706,42 @@ u"""
 
 entry(
     index = 19,
+    label = "MPO1Q2Star",
+    molecule = 
+"""
+1  C u0 p0 c0 {2,D} {8,S} {9,S}
+2  C u0 p0 c0 {1,D} {3,S} {10,S}
+3  C u0 p0 c0 {2,S} {4,S} {6,S} {11,S}
+4  O u0 p2 c0 {3,S} {5,S}
+5  O u0 p2 c0 {4,S} {12,S}
+6  O u0 p2 c0 {3,S} {7,S}
+7  C u0 p0 c0 {6,S} {13,S} {14,S} {15,S}
+8  H u0 p0 c0 {1,S}
+9  H u0 p0 c0 {1,S}
+10 H u0 p0 c0 {2,S}
+11 H u0 p0 c0 {3,S}
+12 H u0 p0 c0 {5,S}
+13 H u0 p0 c0 {7,S}
+14 H u0 p0 c0 {7,S}
+15 H u0 p0 c0 {7,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[2.91198,0.0935515,-0.000187252,2.339e-07,-1.17999e-10,-19578.6,12.1871], Tmin=(10,'K'), Tmax=(556.52,'K')),
+            NASAPolynomial(coeffs=[8.10592,0.0453781,-2.81864e-05,8.34609e-09,-9.49511e-13,-19578.6,-8.31832], Tmin=(556.52,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+    ),
+    shortDesc = u"""""",
+    longDesc = 
+u"""
+
+""",
+)
+
+entry(
+    index = 20,
     label = "Ozoind13",
     molecule = 
 """
@@ -735,8 +764,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.76502,0.0315606,5.0096e-05,-8.69387e-08,3.6407e-11,-29981.1,12.1606], Tmin=(10,'K'), Tmax=(855.73,'K')),
-            NASAPolynomial(coeffs=[3.98919,0.0541525,-3.09428e-05,8.47788e-09,-8.9994e-13,-29981.1,6.05663], Tmin=(855.73,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.72915,0.0284479,8.36406e-05,-1.56147e-07,7.71316e-11,-20164.2,11.1052], Tmin=(10,'K'), Tmax=(701.61,'K')),
+            NASAPolynomial(coeffs=[3.11807,0.0581033,-3.57145e-05,1.04301e-08,-1.1685e-12,-20164.2,9.24615], Tmin=(701.61,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -749,7 +778,7 @@ u"""
 )
 
 entry(
-    index = 20,
+    index = 21,
     label = "MPO1Q2-1OCYC",
     molecule = 
 """
@@ -772,8 +801,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.59505,0.042073,2.3024e-05,-6.33523e-08,2.95336e-11,-58618.8,10.8848], Tmin=(10,'K'), Tmax=(826.59,'K')),
-            NASAPolynomial(coeffs=[5.68595,0.0516795,-3.02023e-05,8.44426e-09,-9.12038e-13,-58618.8,-2.8805], Tmin=(826.59,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.59505,0.042073,2.30238e-05,-6.33518e-08,2.95334e-11,-48801.9,10.8848], Tmin=(10,'K'), Tmax=(826.6,'K')),
+            NASAPolynomial(coeffs=[5.68604,0.0516792,-3.02021e-05,8.44419e-09,-9.12027e-13,-48801.9,-2.88099], Tmin=(826.6,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -786,7 +815,7 @@ u"""
 )
 
 entry(
-    index = 21,
+    index = 22,
     label = "MPO1Q23OCYC",
     molecule = 
 """
@@ -809,8 +838,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.38576,0.0659346,-4.45748e-05,9.88458e-09,8.94308e-13,-42721.5,9.97381], Tmin=(10,'K'), Tmax=(1063.2,'K')),
-            NASAPolynomial(coeffs=[14.2402,0.037064,-2.07254e-05,5.51606e-09,-5.67655e-13,-42721.5,-46.2384], Tmin=(1063.2,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.38576,0.0659346,-4.45748e-05,9.88458e-09,8.94308e-13,-32904.6,9.97381], Tmin=(10,'K'), Tmax=(1063.2,'K')),
+            NASAPolynomial(coeffs=[14.2402,0.037064,-2.07254e-05,5.51606e-09,-5.67655e-13,-32904.6,-46.2384], Tmin=(1063.2,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -823,7 +852,7 @@ u"""
 )
 
 entry(
-    index = 22,
+    index = 23,
     label = "MPO3Q12OCYC",
     molecule = 
 """
@@ -846,8 +875,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.12067,0.0906382,-0.000263824,5.61366e-07,-4.55492e-10,-43349.3,11.023], Tmin=(10,'K'), Tmax=(392.95,'K')),
-            NASAPolynomial(coeffs=[4.03852,0.0560698,-3.55743e-05,1.07533e-08,-1.24515e-12,-43349.3,9.93032], Tmin=(392.95,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[2.98814,0.106241,-0.000361829,8.11169e-07,-6.78184e-10,-34904.2,11.5728], Tmin=(10,'K'), Tmax=(380.94,'K')),
+            NASAPolynomial(coeffs=[4.44085,0.0573822,-3.71221e-05,1.13533e-08,-1.32441e-12,-34904.2,9.1667], Tmin=(380.94,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -860,7 +889,7 @@ u"""
 )
 
 entry(
-    index = 23,
+    index = 24,
     label = "MPO1O-1OJ",
     molecule = 
 """
@@ -882,8 +911,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.1656,0.0877412,-0.000372232,9.10438e-07,-7.63069e-10,-51166.6,11.1074], Tmin=(10,'K'), Tmax=(410.66,'K')),
-            NASAPolynomial(coeffs=[0.52515,0.0542629,-3.37147e-05,9.84632e-09,-1.09986e-12,-51166.6,27.5735], Tmin=(410.66,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.1656,0.0877412,-0.000372232,9.10438e-07,-7.63069e-10,-41349.7,11.1074], Tmin=(10,'K'), Tmax=(410.66,'K')),
+            NASAPolynomial(coeffs=[0.52515,0.0542629,-3.37147e-05,9.84632e-09,-1.09986e-12,-41349.7,27.5735], Tmin=(410.66,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -896,7 +925,7 @@ u"""
 )
 
 entry(
-    index = 24,
+    index = 25,
     label = "MPO1O3OJ",
     molecule = 
 """
@@ -918,8 +947,8 @@ multiplicity 2
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.409,0.0647378,-0.000228776,6.1365e-07,-5.66539e-10,-47868.4,13.435], Tmin=(10,'K'), Tmax=(383.52,'K')),
-            NASAPolynomial(coeffs=[0.779616,0.0534078,-3.28936e-05,9.68225e-09,-1.09609e-12,-47868.4,27.3161], Tmin=(383.52,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.08165,0.0953311,-0.000407843,9.54467e-07,-7.67979e-10,-38051.5,10.784], Tmin=(10,'K'), Tmax=(423.1,'K')),
+            NASAPolynomial(coeffs=[0.956071,0.0523092,-3.15537e-05,8.9782e-09,-9.80909e-13,-38051.5,25.8866], Tmin=(423.1,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -932,7 +961,7 @@ u"""
 )
 
 entry(
-    index = 25,
+    index = 26,
     label = "MPO_CP1-1",
     molecule = 
 """
@@ -955,40 +984,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.56462,0.0370009,9.89701e-05,-2.69132e-07,1.89284e-10,-64611.9,11.1498], Tmin=(10,'K'), Tmax=(493.57,'K')),
-            NASAPolynomial(coeffs=[3.72512,0.0589523,-3.84091e-05,1.1878e-08,-1.39978e-12,-64611.9,7.61967], Tmin=(493.57,'K'), Tmax=(3000,'K')),
-        ],
-        Tmin = (10,'K'),
-        Tmax = (3000,'K'),
-    ),
-    shortDesc = u"""""",
-    longDesc = 
-u"""
-
-""",
-)
-
-entry(
-    index = 26,
-    label = "Propionic",
-    molecule = 
-"""
-1  C u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
-2  C u0 p0 c0 {1,S} {7,S} {8,S} {9,S}
-3  C u0 p0 c0 {1,S} {4,S} {10,D}
-4  O u0 p2 c0 {3,S} {11,S}
-5  H u0 p0 c0 {1,S}
-6  H u0 p0 c0 {1,S}
-7  H u0 p0 c0 {2,S}
-8  H u0 p0 c0 {2,S}
-9  H u0 p0 c0 {2,S}
-10 O u0 p2 c0 {3,D}
-11 H u0 p0 c0 {4,S}
-""",
-    thermo = NASA(
-        polynomials = [
-            NASAPolynomial(coeffs=[3.88017,0.0184421,2.23717e-05,-3.14849e-08,1.02316e-11,-47925.6,9.59501], Tmin=(10,'K'), Tmax=(1140.46,'K')),
-            NASAPolynomial(coeffs=[5.14802,0.0308407,-1.60918e-05,3.95091e-09,-3.75412e-13,-47925.6,-1.49115], Tmin=(1140.46,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.56462,0.0370009,9.89701e-05,-2.69132e-07,1.89284e-10,-54795,11.1498], Tmin=(10,'K'), Tmax=(493.57,'K')),
+            NASAPolynomial(coeffs=[3.72512,0.0589523,-3.84091e-05,1.1878e-08,-1.39978e-12,-54795,7.61967], Tmin=(493.57,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -1002,6 +999,38 @@ u"""
 
 entry(
     index = 27,
+    label = "Propionic",
+    molecule = 
+"""
+1  C u0 p0 c0 {2,S} {6,S} {7,S} {8,S}
+2  C u0 p0 c0 {1,S} {3,S} {9,S} {10,S}
+3  C u0 p0 c0 {2,S} {4,D} {5,S}
+4  O u0 p2 c0 {3,D}
+5  O u0 p2 c0 {3,S} {11,S}
+6  H u0 p0 c0 {1,S}
+7  H u0 p0 c0 {1,S}
+8  H u0 p0 c0 {1,S}
+9  H u0 p0 c0 {2,S}
+10 H u0 p0 c0 {2,S}
+11 H u0 p0 c0 {5,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.82289,0.0192901,2.08652e-05,-3.18432e-08,1.0933e-11,-38108.7,9.73308], Tmin=(10,'K'), Tmax=(1068.47,'K')),
+            NASAPolynomial(coeffs=[3.88618,0.0330098,-1.79888e-05,4.6246e-09,-4.60062e-13,-38108.7,5.69549], Tmin=(1068.47,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+    ),
+    shortDesc = u"""""",
+    longDesc = 
+u"""
+
+""",
+)
+
+entry(
+    index = 28,
     label = "MPO1O-1O",
     molecule = 
 """
@@ -1021,8 +1050,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.3454,0.064478,-0.000171941,3.66961e-07,-2.94518e-10,-70822.4,9.65601], Tmin=(10,'K'), Tmax=(418.93,'K')),
-            NASAPolynomial(coeffs=[2.498,0.0489748,-3.19533e-05,9.75851e-09,-1.13293e-12,-70822.4,15.478], Tmin=(418.93,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.3454,0.064478,-0.000171941,3.66961e-07,-2.94518e-10,-61005.5,9.65601], Tmin=(10,'K'), Tmax=(418.93,'K')),
+            NASAPolynomial(coeffs=[2.498,0.0489748,-3.19533e-05,9.75851e-09,-1.13293e-12,-61005.5,15.478], Tmin=(418.93,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -1035,7 +1064,7 @@ u"""
 )
 
 entry(
-    index = 28,
+    index = 29,
     label = "MPO_CP13",
     molecule = 
 """
@@ -1058,8 +1087,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.47754,0.0460187,1.10417e-05,-5.5054e-08,2.94415e-11,-61108.2,11.7138], Tmin=(10,'K'), Tmax=(735.88,'K')),
-            NASAPolynomial(coeffs=[4.74967,0.0529554,-3.13329e-05,8.91441e-09,-9.805e-13,-61108.2,3.41835], Tmin=(735.88,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.47754,0.0460187,1.10417e-05,-5.5054e-08,2.94415e-11,-51291.3,11.7138], Tmin=(10,'K'), Tmax=(735.88,'K')),
+            NASAPolynomial(coeffs=[4.74967,0.0529554,-3.13329e-05,8.91441e-09,-9.805e-13,-51291.3,3.41835], Tmin=(735.88,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
@@ -1072,7 +1101,7 @@ u"""
 )
 
 entry(
-    index = 29,
+    index = 30,
     label = "MPO1O3O",
     molecule = 
 """
@@ -1092,8 +1121,8 @@ entry(
 """,
     thermo = NASA(
         polynomials = [
-            NASAPolynomial(coeffs=[3.2758,0.0799826,-0.000357235,9.09099e-07,-7.94684e-10,-64061,11.7998], Tmin=(10,'K'), Tmax=(390.03,'K')),
-            NASAPolynomial(coeffs=[1.64397,0.0454345,-2.71377e-05,7.75226e-09,-8.54154e-13,-64061,23.1365], Tmin=(390.03,'K'), Tmax=(3000,'K')),
+            NASAPolynomial(coeffs=[3.2758,0.0799826,-0.000357235,9.09099e-07,-7.94684e-10,-54244.1,11.7998], Tmin=(10,'K'), Tmax=(390.03,'K')),
+            NASAPolynomial(coeffs=[1.64397,0.0454345,-2.71377e-05,7.75226e-09,-8.54154e-13,-54244.1,23.1365], Tmin=(390.03,'K'), Tmax=(3000,'K')),
         ],
         Tmin = (10,'K'),
         Tmax = (3000,'K'),
