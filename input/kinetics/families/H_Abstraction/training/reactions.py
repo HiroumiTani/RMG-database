@@ -2918,7 +2918,7 @@ entry(
     index = 1078,
     label = "MPO1O-1OJ + O2 <=> MPO1O-1O-birad + HO2",
     degeneracy = 4,
-    kinetics = Arrhenius(A=(2.45e-1, 'cm^3/(mol*s)'), n=3.573, Ea=(5.967, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(2.443e-1, 'cm^3/(mol*s)'), n=3.574, Ea=(6.051, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 

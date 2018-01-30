@@ -63,7 +63,7 @@ entry(
     index = 3,
     label = "MPO1O3OJ + O2 <=> MPO1O3O + HO2",
     degeneracy = 8,
-    kinetics = Arrhenius(A=(1.109e-1, 'cm^3/(mol*s)'), n=3.469, Ea=(6.630, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(2.347e-1, 'cm^3/(mol*s)'), n=3.588, Ea=(6.305, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 

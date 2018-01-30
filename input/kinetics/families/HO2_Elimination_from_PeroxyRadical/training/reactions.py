@@ -40,7 +40,7 @@ entry(
     label = "MPO1QJ <=> MPO1Star + HO2",
     degeneracy = 2,
     kinetics = Arrhenius(
-        A = (1.03e10, 's^-1'),
+        A = (1.034e10, 's^-1'),
         n = 1.109,
         Ea = (30.611, 'kcal/mol'),
         T0 = (1, 'K'),
@@ -58,9 +58,9 @@ entry(
     label = "MPO1Q3QJ <=> MPO1Q2Star + HO2",
     degeneracy = 2,
     kinetics = Arrhenius(
-        A = (1.403e13, 's^-1'),
-        n = -0.226,
-        Ea = (26.937, 'kcal/mol'),
+        A = (1.132e13, 's^-1'),
+        n = -0.199,
+        Ea = (28.052, 'kcal/mol'),
         T0 = (1, 'K'),
     ),
     rank = 3,

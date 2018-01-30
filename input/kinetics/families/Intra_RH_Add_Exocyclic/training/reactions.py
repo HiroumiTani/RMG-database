@@ -11,7 +11,7 @@ entry(
     index = 1,
     label = "MPO1Q-1Q <=> MPO_CP1-1",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(5.62e12, 's^-1'), n=0.023, Ea=(36.824, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(6.416e11, 's^-1'), n=0.153, Ea=(35.947, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 

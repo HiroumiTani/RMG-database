@@ -12,9 +12,9 @@ entry(
     label = "MPO1O3Q <=> MPO_CP13",
     degeneracy = 4,
     kinetics = Arrhenius(
-        A = (9.484e7, 's^-1'),
-        n = 0.489,
-        Ea = (30.624, 'kcal/mol'),
+        A = (3.552e10, 's^-1'),
+        n = -0.334,
+        Ea = (11.444, 'kcal/mol'),
         T0 = (1, 'K'),
     ),
     rank = 3,

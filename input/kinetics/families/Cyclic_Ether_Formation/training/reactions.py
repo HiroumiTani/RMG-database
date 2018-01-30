@@ -39,7 +39,7 @@ entry(
     index = 2,
     label = "MPO1Q2J-1Q-1 <=> MPO-1Q12OCYC + OH",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(7.75e11, 's^-1'), n=0.025, Ea=(10.813, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(1.103e17, 's^-1'), n=-1.498, Ea=(7.076, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -52,7 +52,7 @@ entry(
     index = 3,
     label = "MPO1Q2J-1Q-2 <=> MPO1Q2-1OCYC + OH",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(2.52e8, 's^-1'), n=0.376, Ea=(13.863, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(7.382e15, 's^-1'), n=-1.199, Ea=(17.561, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -65,7 +65,7 @@ entry(
     index = 4,
     label = "MPO1Q-1J <=> MPO1-1OCYC + OH",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(2.092, 's^-1'), n=3.667, Ea=(21.351, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(2.172e5, 's^-1'), n=1.242, Ea=(9.946, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -78,7 +78,7 @@ entry(
     index = 5,
     label = "MPO1Q2J-1 <=> MPO12OCYC + OH",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(1.15e17, 's^-1'), n=-2.844, Ea=(12.492, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(1.408e10, 's^-1'), n=0.591, Ea=(14.270, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -91,7 +91,7 @@ entry(
     index = 6,
     label = "MPO1Q3J <=> MPO13OCYC + OH",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(8.659e4, 's^-1'), n=1.438, Ea=(16.939, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(3.161e4, 's^-1'), n=1.706, Ea=(7.488, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -104,7 +104,7 @@ entry(
     index = 7,
     label = "MPO1Q2J3Q-1 <=> MPO3Q12OCYC + OH",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(2.217e25, 's^-1'), n=-5.469, Ea=(13.266, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(4.741e7, 's^-1'), n=1.777, Ea=(12.108, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -117,7 +117,7 @@ entry(
     index = 8,
     label = "MPO1Q2J3Q-2 <=> MPO1Q23OCYC + OH",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(6.069e14, 's^-1'), n=-0.176, Ea=(13.802, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(1.285e10, 's^-1'), n=1.123, Ea=(14.770, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 

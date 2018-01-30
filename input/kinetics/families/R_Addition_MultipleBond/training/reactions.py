@@ -1273,7 +1273,7 @@ entry(
     index = 186,
     label = "MPO1Q2J <=> MPO1Star + HO2",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(4.891e12, 's^-1'), n=-0.291, Ea=(21.232, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(5.728e11, 's^-1'), n=-0.058, Ea=(24.540, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -1304,7 +1304,7 @@ entry(
     index=187,
     label = "MPO1Q2J3Q <=> MPO1Q2Star + HO2",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(8.255e15, 's^-1'), n=-0.549, Ea=(16.043, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(8.552e14, 's^-1'), n=-0.356, Ea=(18.611, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -1337,7 +1337,7 @@ entry(
     index=188,
     label = "MPO1O3OJ <=> CH2COOCH3 + CH2O",
     degeneracy = 1,
-    kinetics = Arrhenius(A=(5.475e11, 's^-1'), n=0.562, Ea=(14.030, 'kcal/mol'), T0=(1, 'K')),
+    kinetics = Arrhenius(A=(6.977e9, 's^-1'), n=1.184, Ea=(13.870, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""G4 calculation""",
     longDesc = 
@@ -1356,6 +1356,7 @@ entry(
         Ea = (22.7647, 'kJ/mol'),
         T0 = (1, 'K'),
     ),
+
     rank = 3,
     shortDesc = u"""Training reaction, kinetics calculated by Lawrence Lai""",
     longDesc = 
@@ -1366,9 +1367,22 @@ More information can be found on pharos/home/laitcl/Gaussian/HAdditiontoRing
 """,
 )
 
+
+entry(
+    index=191,
+    label = "MPO1O3OJ-2 <=> MPO1O3O + H",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(1.049e10, 's^-1'), n=1.186, Ea=(17.281, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""G4 calculation""",
+    longDesc = 
+u"""
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
+""",
+      )
+
 entry(
     index = 80,
-<<<<<<< HEAD
     label = "C7H8-13 + H <=> C7H9-24",
     degeneracy = 2.0,
     kinetics = Arrhenius(
@@ -3045,6 +3059,19 @@ entry(
     label = "CH3OCH2 <=> CH3 + CH2O-2",
     degeneracy = 1,
     kinetics = Arrhenius(A=(8.03e12, 's^-1'), n=0.44, Ea=(26.472, 'kcal/mol'), T0=(1, 'K')),
+    rank = 3,
+    shortDesc = u"""CBS-QB3 calculation""",
+    longDesc = 
+u"""
+CBS-QB3 calculation from Burke et al. 2014 dimethyl ether model
+""",
+)
+
+entry(
+    index = 192,
+    label = "MPO1Q-1J <=> CH3CH2CHOO + CH2O-2",
+    degeneracy = 1,
+    kinetics = Arrhenius(A=(1.135e2, 's^-1'), n=2.693, Ea=(6.750, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
     shortDesc = u"""CBS-QB3 calculation""",
     longDesc = 
