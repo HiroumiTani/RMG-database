@@ -3073,10 +3073,10 @@ entry(
     degeneracy = 1,
     kinetics = Arrhenius(A=(1.135e2, 's^-1'), n=2.693, Ea=(6.750, 'kcal/mol'), T0=(1, 'K')),
     rank = 3,
-    shortDesc = u"""CBS-QB3 calculation""",
+    shortDesc = u"""G4 calculation""",
     longDesc = 
 u"""
-CBS-QB3 calculation from Burke et al. 2014 dimethyl ether model
+G4 Calculation with 1-D HR done by Lintao Bu at Nrel
 """,
 )
 
