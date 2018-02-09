@@ -4359,6 +4359,66 @@ entry(
     kinetics = None,
 )
 
+entry(
+    index = 293,
+    label = "Cs_H_out_2H/Cd",
+    group =
+"""
+1 *2 Cs u0 {2,S} {3,S} {4,S} {5,S}
+2 *3 H  u0 {1,S}
+3    H  u0 {1,S}
+4    H  u0 {1,S}
+5 *5 Cd u0 {1,S}
+""",
+    kinetics = None,
+)
+
+entry(
+    index = 294,
+    label = "C_rad_out_2H/Cd",
+    group = 
+"""
+1 *1 C u1 {2,S} {3,S} {4,S}
+2    H u0 {1,S}
+3    H u0 {1,S}
+4 *4 Cd u0 {1,S}
+""",
+    kinetics = None,
+)
+
+entry(
+    index = 295,
+    label = "R2H_S_cy5_poly",
+    group = 
+"""
+1 *1 R!H u1 {2,S} {6,[S,D,B]} {7,[S,D,B]}
+2 *2 R!H u0 {1,S} {3,S} {4,[S,D,B]}
+3 *3 H   u0 {2,S}
+4    R!H u0 {2,[S,D,B]} {5,[S,D,B]}
+5    R!H u0 {4,[S,D,B]} {6,[S,D,B]}
+6    R!H u0 {1,[S,D,B]} {5,[S,D,B]} {8,[S,D,B]}
+7    R!H u0 {1,[S,D,B]}
+8    R!H u0 {6,[S,D,B]}
+""",
+    kinetics = None,
+)
+
+entry(
+    index = 296,
+    label = "R4H_D(S)SB",
+    group = 
+"""
+1 *1 R!H u1 {2,D}
+2 *4 Cd u0 {1,D} {3,S} {6,S}
+3 *5 Cb u0 {2,S} {4,B}
+4 *2 R!H u0 {3,B} {5,S}
+5 *3 H  u0 {4,S}
+6    C  u0 {2,S}
+""",
+    kinetics = None,
+)
+
+
 tree(
 """
 L1: RnH
@@ -4368,6 +4428,7 @@ L1: RnH
                 L5: R2H_S_cy3
                 L5: R2H_S_cy4
                 L5: R2H_S_cy5
+                    L6: R2H_S_cy5_poly
             L4: R2H_D
             L4: R2H_B
     L2: R3Hall
@@ -4424,6 +4485,7 @@ L1: RnH
                 L5: R4H_RSB
                     L6: R4H_SSB
                     L6: R4H_DSB
+                        L7: R4H_D(S)SB
                         L7: R4H_DSB_benzofulvenyl
                     L6: R4H_TSB
                     L6: R4H_BSB
@@ -4580,6 +4642,7 @@ L1: Y_rad_out
     L2: CS_rad_out
     L2: C_rad_out_single
         L3: C_rad_out_2H
+            L4: C_rad_out_2H/Cd
         L3: C_rad_out_1H
             L4: C_rad_out_H/NonDeC
             L4: C_rad_out_H/NonDeO
@@ -4605,7 +4668,7 @@ L1: Y_rad_out
                 L5: C_rad_out_Cd/Cd
                     L6: C_rad_out_Cd/Cd_cyc5
                         L7: C_rad_out_Cd/Cd_cyc5_cyc6
-		        L5: C_rad_out_Cd/Cb
+                L5: C_rad_out_Cd/Cb
 L1: XH_out
     L2: CO_H_out
     L2: O_H_out
@@ -4620,12 +4683,13 @@ L1: XH_out
         L3: Cd_H_out_singleNd
         L3: Cd_H_out_singleDe
             L4: Cd_H_out_Cb
-	        L4: Cd_H_out_CdCb
+            L4: Cd_H_out_CdCb
     L2: Cs_H_out
         L3: Cs_H_out_OOH    
             L4: Cs_H_out_OOH/Cs
             L4: Cs_H_out_OOH/H
         L3: Cs_H_out_2H
+            L4: Cs_H_out_2H/Cd
         L3: Cs_H_out_noH
             L4: Cs_H_out_NonDe
                 L5: Cs_H_out_Cs2
