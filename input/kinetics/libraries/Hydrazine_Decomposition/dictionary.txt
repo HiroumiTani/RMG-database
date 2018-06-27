@@ -77,3 +77,18 @@ NH2NHN(S)
 5 H u0 p0 c0 {1,S}
 6 H u0 p0 c0 {2,S}
 
+N2H2
+1 N u0 p1 c0 {2,D} {3,S}
+2 N u0 p1 c0 {1,D} {4,S}
+3 H u0 p0 c0 {1,S}
+4 H u0 p0 c0 {2,S}
+
+NNH
+multiplicity 2
+1 N u0 p1 c0 {2,D} {3,S}
+2 N u1 p1 c0 {1,D}
+3 H u0 p0 c0 {1,S}
+
+H2
+1 H u0 p0 c0 {2,S}
+2 H u0 p0 c0 {1,S}

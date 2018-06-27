@@ -7,6 +7,7 @@ longDesc = u"""
  
 """
 
+#-- N2H2 system--#
 entry(
     index = 1,
     label = "H2NN(T) <=> H2NN(S)",
@@ -20,6 +21,137 @@ u"""
 
 entry(
     index = 2,
+    label = "N2H2 <=> H2NN(S)",
+    degeneracy = 1,
+    kinetics = Chebyshev(
+        coeffs = [
+            [-13.8511, 0.627501, -0.0350114, -0.0157004],
+            [18.6057, 0.921662, -0.0465612, -0.0135683],
+            [0.872831, 0.303498, -0.00455267, 0.0138132],
+            [-0.385871, -0.0298657, 0.014964, 0.0163484],
+            [-0.109817, -0.0368455, 0.01052, 0.00200981],
+            [0.0287755, 0.00903461, 0.00265585, -0.00447134],
+        ],
+        kunits = 's^-1',
+        Tmin = (300, 'K'),
+        Tmax = (2500, 'K'),
+        Pmin = (0.01, 'bar'),
+        Pmax = (100, 'bar'),
+    ),
+    longDesc =
+u"""
+calculated by alongd (xc1097) at the CCSD(T)-F12a/cc-pVTZ//B3LYP/6-311G(2d,d,p) level of theory
+frequencies calculated at  ???
+""",
+)
+
+entry(
+    index = 3,
+    label = "H2NN(S) <=> N2 + H2",
+    degeneracy = 1,
+    kinetics = Chebyshev(
+        coeffs = [
+            [-7.38087, 0.785943, -0.0774501, -0.00780201],
+            [13.7989, 0.922225, -0.0752493, -0.00274985],
+            [0.820108, 0.0140637, 0.0321019, 0.00895573],
+            [-0.259037, -0.114722, 0.0437119, -0.00278543],
+            [-0.0439093, 0.0568612, 0.00916914, -0.00975332],
+            [-0.00659426, 0.0444414, -0.0093558, -0.000200908],
+        ],
+        kunits = 's^-1',
+        Tmin = (300, 'K'),
+        Tmax = (2500, 'K'),
+        Pmin = (0.01, 'bar'),
+        Pmax = (100, 'bar'),
+    ),
+    longDesc =
+u"""
+calculated by alongd (xc1097) at the CCSD(T)-F12a/cc-pVTZ//B3LYP/6-311G(2d,d,p) level of theory
+frequencies calculated at  ???
+""",
+)
+
+entry(
+    index = 4,
+    label = "N2H2 <=> N2 + H2",
+    degeneracy = 1,
+    kinetics = Chebyshev(
+        coeffs = [
+            [-17.7388, 0.472326, -0.160124, -0.097477],
+            [23.191, 1.22126, -0.111845, 0.084807],
+            [0.135253, -0.169954, 0.147134, 0.0181789],
+            [-0.227456, 0.0392644, 0.0457154, -0.0320669],
+            [-0.114344, 0.0576512, -0.0238903, 0.00670782],
+            [-0.0357095, 0.000914306, -0.00598934, 0.00651496],
+        ],
+        kunits = 's^-1',
+        Tmin = (300, 'K'),
+        Tmax = (2500, 'K'),
+        Pmin = (0.01, 'bar'),
+        Pmax = (100, 'bar'),
+    ),
+    longDesc =
+u"""
+calculated by alongd (xc1097) at the CCSD(T)-F12a/cc-pVTZ//B3LYP/6-311G(2d,d,p) level of theory
+frequencies calculated at  ???
+""",
+)
+
+entry(
+    index = 5,
+    label = "H2NN(S) <=> NNH + H",
+    degeneracy = 2,
+    kinetics = Chebyshev(
+        coeffs = [
+            [-6.79535, -0.188745, -0.34384, 0.0497407],
+            [13.029, 0.534428, 0.150297, -0.0233699],
+            [-0.325696, 0.18094, 0.0883039, -0.00179],
+            [-0.192609, -6.73287e-05, 0.0234701, 0.0039534],
+            [-0.0810202, -0.00920937, 0.00618382, -0.000998913],
+            [-0.0306573, -0.00107408, 0.00268743, -0.00152199],
+        ],
+        kunits = 's^-1',
+        Tmin = (300, 'K'),
+        Tmax = (2500, 'K'),
+        Pmin = (0.01, 'bar'),
+        Pmax = (100, 'bar'),
+    ),
+    longDesc =
+u"""
+calculated by alongd (xc1097) at the CCSD(T)-F12a/cc-pVTZ//B3LYP/6-311G(2d,d,p) level of theory
+frequencies calculated at  ???
+""",
+)
+
+entry(
+    index = 6,
+    label = "N2H2 <=> NNH + H",
+    degeneracy = 2,
+    kinetics = Chebyshev(
+        coeffs = [
+            [-14.863, 0.722928, -0.252228, 0.033144],
+            [19.9042, -0.225503, 0.126307, 0.0170199],
+            [-0.494738, 0.0656686, 0.0477197, -0.017545],
+            [-0.218506, 0.0423105, 0.015279, -0.00408882],
+            [-0.104384, 0.0174777, 0.00850125, -8.56115e-05],
+            [-0.0502859, 0.00560463, 0.00500782, -7.98848e-05],
+        ],
+        kunits = 's^-1',
+        Tmin = (300, 'K'),
+        Tmax = (2500, 'K'),
+        Pmin = (0.01, 'bar'),
+        Pmax = (100, 'bar'),
+    ),
+    longDesc =
+u"""
+calculated by alongd (xc1097) at the CCSD(T)-F12a/cc-pVTZ//B3LYP/6-311G(2d,d,p) level of theory
+frequencies calculated at  ???
+""",
+)
+
+#--N3H5 system--#
+entry(
+    index = 7,
     label = "NH2 + N2H3 <=> H2NN(S) + NH3",
     degeneracy = 1,
     duplicate = True,
@@ -42,7 +174,7 @@ Using BAC; frequencyScaleFactor = 0.975
 )
 
 entry(
-    index = 3,
+    index = 8,
     label = "NH2 + N2H3 <=> H2NN(T) + NH3",
     degeneracy = 1,
     kinetics = Arrhenius(
@@ -64,7 +196,7 @@ Using BAC; frequencyScaleFactor = 0.975
 )
 
 entry(
-    index = 4,
+    index = 9,
     label = "N2H3 + NH2 <=> NH2NHNH2",
     degeneracy = 1,
     kinetics = Chebyshev(
@@ -92,7 +224,7 @@ Using BAC; frequencyScaleFactor = 0.975
 )
 
 entry(
-    index = 5,
+    index = 10,
     label = "NH2NHNH2 <=> NH3 + H2NN(S)",
     degeneracy = 1,
     kinetics = Chebyshev(
@@ -120,7 +252,7 @@ Using BAC; frequencyScaleFactor = 0.975
 )
 
 entry(
-    index = 6,
+    index = 11,
     label = "N2H3 + NH2 <=> NH3 + H2NN(S)",
     degeneracy = 1,
     duplicate = True,
@@ -148,8 +280,9 @@ Using BAC; frequencyScaleFactor = 0.975
 """,
 )
 
+#--N4H6 system--#
 entry(
-    index = 7,
+    index = 12,
     label = "H4N2 + H2NN(S) <=> N4H6",
     degeneracy = 1,
     kinetics = Chebyshev(
@@ -176,7 +309,7 @@ rotors calculated at ub3lyp/6-311g(2d,pd)
 )
 
 entry(
-    index = 8,
+    index = 13,
     label = "N4H6 <=> NH2NHN(S) + NH3",
     degeneracy = 1,
     kinetics = Chebyshev(
@@ -203,7 +336,7 @@ rotors calculated at ub3lyp/6-311g(2d,pd)
 )
 
 entry(
-    index = 9,
+    index = 14,
     label = "H4N2 + H2NN(S) <=> NH2NHN(S) + NH3",
     degeneracy = 1,
     kinetics = Chebyshev(
@@ -230,7 +363,7 @@ rotors calculated at ub3lyp/6-311g(2d,pd)
 )
 
 entry(
-    index = 10,
+    index = 15,
     label = "N2 + NH3 <=> NH2NHN(S)",
     degeneracy = 1,
     kinetics = Chebyshev(
