@@ -10981,6 +10981,7 @@ entry(
     index = 705,
     label = "N2H4 <=> H2NN + H2",
     degeneracy = 1,
+    elementary_high_p = True,
     kinetics = Arrhenius(A=(1.4e+14, 's^-1'), n=0, Ea=(74911, 'cal/mol'), T0=(1, 'K')),
 )
 
